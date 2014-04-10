@@ -4,7 +4,11 @@
             [hello-world.server :refer :all]))
 
 (deftest does-it-respond?
-  (let [{:keys [status body]} (app (request :get "/app"))]
-    (testing "the app responds to a 200"
-      (is (= status 200)
-          (re-find #"Click me!" body)))))
+  (testing "the app responds to a 200"
+    (let [{:keys [status body]} (app (request :get "/app"))]
+      (is (= status 200)))))
+
+(deftest is-there-a-cat?
+  (testing "there is a cat on the page"
+    (let [{:keys [body]} (app (request :get "/app"))]
+      (is (re-find #"img\s+src=[^\s]+kitten[^\s]+\.jpg" body)))))
