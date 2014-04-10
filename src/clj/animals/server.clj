@@ -1,4 +1,4 @@
-(ns hello-world.server
+(ns animals.server
   (:require [ring.adapter.jetty :as jetty]
             [ring.middleware.resource :as resources]
             [ring.util.response :as response])

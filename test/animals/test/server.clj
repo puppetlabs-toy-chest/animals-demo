@@ -1,7 +1,7 @@
-(ns hello-world.test.server
+(ns animals.test.server
   (:require [clojure.test :refer :all]
             [ring.mock.request :refer [request]]
-            [hello-world.server :refer :all]))
+            [animals.server :refer :all]))
 
 (deftest does-it-respond?
   (testing "the app responds to a 200"
