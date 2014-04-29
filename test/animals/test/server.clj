@@ -12,3 +12,8 @@
   (testing "there is a cat on the page"
     (let [{:keys [body]} (app (request :get "/app"))]
       (is (re-find #"img\s+src=[^\s]+kitten[^\s]+\.jpg" body)))))
+
+(deftest is-there-a-dog?
+  (testing "there is a dog on the page"
+    (let [{:keys [body]} (app (request :get "/app"))]
+      (is (re-find #"img\s+src=[^\s]+doggie[^\s]+\.php" body)))))
